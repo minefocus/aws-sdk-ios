@@ -1190,7 +1190,7 @@ NSString *const FAILURE_REASON = @"NSLocalizedFailureReason";
     
     //Create the PublicEndpoint object and set the endpoint specific information
     AWSPinpointTargetingPublicEndpoint *endpoint = [AWSPinpointTargetingPublicEndpoint new];
-    endpoint.channelType = [profile.channelType isEqualToString:@"APNS"] ? AWSPinpointTargetingChannelTypeApns : AWSPinpointTargetingChannelTypeApnsSandbox;
+    endpoint.channelType = [profile.channelType isEqualToString:@"APNS"] ? AWSPinpointTargetingChannelTypeGcm : AWSPinpointTargetingChannelTypeApnsSandbox;
     endpoint.address = profile.address;
     endpoint.location = location;
     endpoint.demographic = demographic;

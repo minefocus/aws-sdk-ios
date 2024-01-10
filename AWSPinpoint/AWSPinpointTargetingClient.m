@@ -441,7 +441,7 @@ NSString *const APNS_CHANNEL_TYPE = @"APNS";
 
 - (AWSPinpointTargetingUpdateEndpointRequest*) updateEndpointRequestForEndpoint:(AWSPinpointEndpointProfile *) endpoint {
     AWSPinpointTargetingEndpointRequest *endpointRequest =  [AWSPinpointTargetingEndpointRequest new];
-    endpointRequest.channelType = [endpoint.channelType isEqualToString:APNS_CHANNEL_TYPE] ? AWSPinpointTargetingChannelTypeApns : AWSPinpointTargetingChannelTypeApnsSandbox;
+    endpointRequest.channelType = [endpoint.channelType isEqualToString:APNS_CHANNEL_TYPE] ? AWSPinpointTargetingChannelTypeGcm : AWSPinpointTargetingChannelTypeApnsSandbox;
     endpointRequest.address = endpoint.address;
     endpointRequest.location = [self locationModelForLocation:endpoint.location];
     endpointRequest.demographic = [self endpointDemographicModelForDemographic:endpoint.demographic];
