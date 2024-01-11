@@ -405,15 +405,16 @@ NSString *DEBUG_CHANNEL_TYPE = @"APNS_SANDBOX";
         return NULL;
     }
 
-    const unsigned char *bytes = [data bytes];
+    //const unsigned char *bytes = [data bytes];
+    NSString *str = [NSString stringWithUTF8String:[data bytes]];
 
-    NSMutableString *hexString = [[NSMutableString alloc] init];
-    for (int i = 0; i < data.length; i++) {
-        unsigned char byte = bytes[i];
-        [hexString appendFormat:@"%02x", byte];
-    }
+//    NSMutableString *hexString = [[NSMutableString alloc] init];
+//    for (int i = 0; i < data.length; i++) {
+//        unsigned char byte = bytes[i];
+//        [hexString appendFormat:@"%02x", byte];
+//    }
 
-    return hexString;
+    return str;
 }
 
 @end
